@@ -25,7 +25,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = 'django-insecure-$$e2_$tl%^zw(uf%j@nb25!wqs!msm97!+z=+0p=06s^$sut_z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = FALSE
 
 ALLOWED_HOSTS = ['8000-karinamellor-wheatout-55bjlahzln3.ws-eu100.gitpod.io']
 
