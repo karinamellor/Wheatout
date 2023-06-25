@@ -14,6 +14,8 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,6 +28,9 @@ SECRET_KEY = 'django-insecure-$$e2_$tl%^zw(uf%j@nb25!wqs!msm97!+z=+0p=06s^$sut_z
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-karinamellor-wheatout-55bjlahzln3.ws-eu100.gitpod.io']
+
+ ["PROJ_NAME.herokuapp.com", "YOUR_HOSTNAME"]
+
 
 
 # Application definition
@@ -45,6 +50,20 @@ INSTALLED_APPS = [
 ]
 
 
+NSTALLED_APPS = [
+    …,
+    'cloudinary_storage',
+    'django.contrib.staticfiles',
+    'cloudinary',
+    …,
+]
+
+
+
+
+
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -59,21 +78,25 @@ ROOT_URLCONF = 'wheatout.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
+        
+           …,
+        'DIRS: [TEMPLATES_DIR],
+
+         …,
+           ],
         },
-    },
-]
+    },      
+]   
+
+
 
 WSGI_APPLICATION = 'wheatout.wsgi.application'
+
+
+
+
+
+
 
 
 # Database
@@ -84,6 +107,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+
 }
 
 
@@ -129,3 +153,12 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATIC_URL = '/static/'
+
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
