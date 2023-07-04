@@ -2,6 +2,12 @@ core.Microsoft*
 core.mongo*
 core.python*
 env.py
+import os
+ os.environ["DATABASE_URL"]="postgres://tmapaaur:zwvOoEPrYTxDcs5HYDEaVg8Al0dfUqMM@lucky.db.elephantsql.com/tmapaaur"
+ os.environ["SECRET_KEY"]="my_superHalo"
+
+
+
 __pycache__/
 *.py[cod]
 node_modules/

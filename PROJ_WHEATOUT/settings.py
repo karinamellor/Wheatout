@@ -29,7 +29,7 @@ ALLOWED_HOSTS = ['8000-karinamellor-wheatout-55bjlahzln3.ws-eu101.gitpod.io']
 
 
 # Application definition
-
+ 
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
