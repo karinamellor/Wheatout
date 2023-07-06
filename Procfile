@@ -1,1 +1,1 @@
-web: gunicorn wheatout.wsgi
+web: gunicorn PROJ_WHEATOUT.wsgi
